@@ -8,4 +8,8 @@ aplikasiMahasiswa.controller('mahasiswaCtrl', function($scope){
             "email":"endy.muhardin@gmail.com"
         }
     ];
+    
+    $scope.tombolSubmitDiklik = function(){
+        console.log("Hello World");
+    };
 });
