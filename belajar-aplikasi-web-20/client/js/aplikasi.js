@@ -11,5 +11,8 @@ aplikasiMahasiswa.controller('mahasiswaCtrl', function($scope){
     
     $scope.tombolSubmitDiklik = function(){
         console.log("Hello World");
+        console.log("NPM : "+$scope.x.npm);
+        $scope.data.push(angular.copy($scope.x));
+        $scope.x = {};
     };
 });
