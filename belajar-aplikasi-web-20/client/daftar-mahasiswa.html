@@ -15,19 +15,19 @@
                     <tr>
                         <td>NPM</td>
                         <td>
-                            <input type="text" name="npm">
+                            <input type="text" name="npm" ng-model="x.npm">
                         </td>
                     </tr>
                     <tr>
                         <td>Nama</td>
                         <td>
-                            <input type="text" name="nama">
+                            <input type="text" name="nama" ng-model="x.nama">
                         </td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td>
-                            <input type="text" name="email">
+                            <input type="text" name="email" ng-model="x.email">
                         </td>
                     </tr>
                     <tr>
@@ -40,6 +40,13 @@
             </table>
         </form>
     
+        <h1>Tester</h1>
+        
+        <ul>
+            <li>NPM : {{x.npm}}</li>
+            <li>Nama : {{x.nama}}</li>
+            <li>Email : {{x.email}}</li>
+        </ul>
     
         <h1>Daftar Mahasiswa</h1>
         
