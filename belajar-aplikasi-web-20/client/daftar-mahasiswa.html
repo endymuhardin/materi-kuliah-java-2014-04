@@ -55,10 +55,10 @@
             </thead>
             
             <tbody>
-                <tr>
-                    <td>01234567890</td>
-                    <td>Endy Muhardin</td>
-                    <td>endy.muhardin@gmail.com</td>
+                <tr ng-repeat="mhs in data">
+                    <td>{{mhs.npm}}</td>
+                    <td>{{mhs.nama}}</td>
+                    <td>{{mhs.email}}</td>
                     <td>
                         <a href="#">edit</a> | 
                         <a href="#">hapus</a>
