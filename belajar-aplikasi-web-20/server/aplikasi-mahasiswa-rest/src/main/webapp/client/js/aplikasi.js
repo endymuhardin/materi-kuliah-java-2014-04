@@ -26,7 +26,9 @@ aplikasiMahasiswa.controller('mahasiswaCtrl', function($scope, $http){
     
     $scope.tombolSubmitDiklik = function(){
         console.log("Hello World");
+        $scope.x.tanggalLahir = new Date().getTime();
         console.log("NPM : "+$scope.x.npm);
+        console.log("Tanggal lahir : "+$scope.x.tanggalLahir);
         
         $http.post(urlServer, $scope.x)
             .success(function(dataDariServer, status, headers, config) {
