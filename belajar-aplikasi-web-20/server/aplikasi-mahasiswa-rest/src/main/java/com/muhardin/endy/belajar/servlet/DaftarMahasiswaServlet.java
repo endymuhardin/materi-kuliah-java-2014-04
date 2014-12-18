@@ -13,10 +13,18 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class DaftarMahasiswaServlet extends HttpServlet {
 
-    private MahasiswaDao md = new MahasiswaDao();
-
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("application/json");
+        
+        // Ambil dao dari ServletContext
+        MahasiswaDao md 
+            = (MahasiswaDao) req.getSession()
+                .getServletContext().getAttribute("mahasiswaDao");
+        
+        if(md == null){
+            md = new MahasiswaDao();
+            req.getSession().getServletContext().setAttribute("mahasiswaDao", md);
+        }
         
         List<Mahasiswa> dataMahasiswa = md.semuaMahasiswa();
 

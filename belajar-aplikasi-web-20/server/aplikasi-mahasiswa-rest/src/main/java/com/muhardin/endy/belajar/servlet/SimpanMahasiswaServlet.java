@@ -15,8 +15,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class SimpanMahasiswaServlet extends HttpServlet {
 
-    private MahasiswaDao md = new MahasiswaDao();
-
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String data = CharStreams.toString(req.getReader());
         System.out.println("Data : "+data);
@@ -27,5 +25,17 @@ public class SimpanMahasiswaServlet extends HttpServlet {
         System.out.println("Nama : "+m.getNama());
         System.out.println("Email : "+m.getEmail());
         System.out.println("Tanggal Lahir : "+m.getTanggalLahir());
+        
+        // Ambil dao dari ServletContext
+        MahasiswaDao md 
+            = (MahasiswaDao) req.getSession()
+                .getServletContext().getAttribute("mahasiswaDao");
+        
+        if(md == null){
+            md = new MahasiswaDao();
+            req.getSession().getServletContext().setAttribute("mahasiswaDao", md);
+        }
+        
+        md.simpan(m);
     }
 }
