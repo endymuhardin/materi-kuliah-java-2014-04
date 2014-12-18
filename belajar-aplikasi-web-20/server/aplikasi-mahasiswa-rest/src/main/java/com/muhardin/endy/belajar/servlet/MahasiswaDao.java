@@ -15,7 +15,7 @@ public class MahasiswaDao {
             = new SimpleDateFormat("yyyy-MM-dd");
     
         Mahasiswa m1 = new Mahasiswa();
-        m1.setId(1);
+        m1.setId(0);
         m1.setNpm("123456789001");
         m1.setNama("Mahasiswa 001");
         m1.setEmail("mhs001@gmail.com");
@@ -48,13 +48,18 @@ public class MahasiswaDao {
         m4.setNama("Mahasiswa 004");
         m4.setEmail("mhs004@gmail.com");
         
-        data.add(m1);
-        data.add(m2);
-        data.add(m3);
-        data.add(m4);
+        simpan(m1);
+        simpan(m2);
+        simpan(m3);
+        simpan(m4);
     }
 
     public List<Mahasiswa> semuaMahasiswa(){
         return data;
+    }
+    
+    public void simpan(Mahasiswa m){
+        m.setId(data.size());
+        data.add(m);
     }
 }
