@@ -17,5 +17,15 @@
         <servlet-name>DaftarMahasiswaServlet</servlet-name>
         <url-pattern>/mahasiswa/list</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SimpanMahasiswaServlet</servlet-name>
+        <servlet-class>com.muhardin.endy.belajar.servlet.SimpanMahasiswaServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>SimpanMahasiswaServlet</servlet-name>
+        <url-pattern>/mahasiswa/</url-pattern>
+    </servlet-mapping>
 
 </web-app>
