@@ -1,10 +1,13 @@
 package com.muhardin.endy.belajar.servlet;
 
+import java.util.Date;
+
 public class Mahasiswa {
     private Integer id;
     private String npm;
     private String nama;
     private String email;
+    private Date tanggalLahir;
     
     public Integer getId(){
         return this.id;
@@ -36,5 +39,13 @@ public class Mahasiswa {
     
     public void setEmail(String x){
         this.email = x;
+    }
+    
+    public Date getTanggalLahir(){
+        return this.tanggalLahir;
+    }
+    
+    public void setTanggalLahir(Date x){
+        this.tanggalLahir = x;
     }
 }
